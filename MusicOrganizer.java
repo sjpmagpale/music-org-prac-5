@@ -158,12 +158,22 @@ public class MusicOrganizer
         return valid;
     }
     
-    public void shuffle()
+    public void shuffleMusic()
     {
         // Practice 5 - question 1
         randomMusic = new Random ();
         int index = randomMusic.nextInt(trackList.size());
         System.out.println("Playing: " + trackList.get(index));
     }
-
+    
+    public void shuffle()
+    {
+        // Practice 5 - question 1
+        ArrayList <Track> list = new ArrayList<>(trackList);
+        while(list.size() > 0){
+        int index = randomMusic.nextInt(list.size());
+        System.out.println("Playing: " + list.get(index));
+        list.remove(index);
+        }
+    }
 }
